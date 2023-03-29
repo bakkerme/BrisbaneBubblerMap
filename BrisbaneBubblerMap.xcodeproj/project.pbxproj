@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8B1CAAC29D42C8800F3F68C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1CAAB29D42C8800F3F68C /* LocationManager.swift */; };
+		B8B1CAB029D43BBE00F3F68C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1CAAF29D43BBE00F3F68C /* MapView.swift */; };
 		B8FD8AB429D1861300018CE3 /* BrisbaneBubblerMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FD8AB329D1861300018CE3 /* BrisbaneBubblerMapApp.swift */; };
 		B8FD8AB629D1861300018CE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FD8AB529D1861300018CE3 /* ContentView.swift */; };
 		B8FD8AB829D1861600018CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8FD8AB729D1861600018CE3 /* Assets.xcassets */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8B1CAAB29D42C8800F3F68C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B8B1CAAD29D431C400F3F68C /* gpxgenerator_path.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = gpxgenerator_path.gpx; path = BrisbaneBubblerMap/gpxgenerator_path.gpx; sourceTree = "<group>"; };
+		B8B1CAAE29D4346F00F3F68C /* gpxgenerator_path_2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = gpxgenerator_path_2.gpx; path = BrisbaneBubblerMap/gpxgenerator_path_2.gpx; sourceTree = "<group>"; };
+		B8B1CAAF29D43BBE00F3F68C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B8FD8AB029D1861300018CE3 /* BrisbaneBubblerMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrisbaneBubblerMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FD8AB329D1861300018CE3 /* BrisbaneBubblerMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrisbaneBubblerMapApp.swift; sourceTree = "<group>"; };
 		B8FD8AB529D1861300018CE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 		B8FD8AA729D1861300018CE3 = {
 			isa = PBXGroup;
 			children = (
+				B8B1CAAE29D4346F00F3F68C /* gpxgenerator_path_2.gpx */,
+				B8B1CAAD29D431C400F3F68C /* gpxgenerator_path.gpx */,
 				B8FD8AB229D1861300018CE3 /* BrisbaneBubblerMap */,
 				B8FD8AC329D1861600018CE3 /* BrisbaneBubblerMapTests */,
 				B8FD8ACD29D1861600018CE3 /* BrisbaneBubblerMapUITests */,
@@ -95,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				B8FD8AB329D1861300018CE3 /* BrisbaneBubblerMapApp.swift */,
+				B8B1CAAB29D42C8800F3F68C /* LocationManager.swift */,
 				B8FD8AB529D1861300018CE3 /* ContentView.swift */,
+				B8B1CAAF29D43BBE00F3F68C /* MapView.swift */,
 				B8FD8AB729D1861600018CE3 /* Assets.xcassets */,
 				B8FD8AB929D1861600018CE3 /* Preview Content */,
 			);
@@ -258,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FD8AB629D1861300018CE3 /* ContentView.swift in Sources */,
+				B8B1CAB029D43BBE00F3F68C /* MapView.swift in Sources */,
 				B8FD8AB429D1861300018CE3 /* BrisbaneBubblerMapApp.swift in Sources */,
+				B8B1CAAC29D42C8800F3F68C /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BrisbaneBubblerMap/Preview Content\"";
+				DEVELOPMENT_TEAM = CPB78685HG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this to tell where you are in relation to the water bubblers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -445,8 +459,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BrisbaneBubblerMap/Preview Content\"";
+				DEVELOPMENT_TEAM = CPB78685HG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this to tell where you are in relation to the water bubblers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
