@@ -8,40 +8,34 @@
 import SwiftUI
 import MapKit
 
-//struct ContentView: View {
-//    @StateObject var locationManager = LocationManager()
-//    @State private var region = MKCoordinateRegion()
-//    @State var tracking:MapUserTrackingMode = .followWithHeading
-//
-//    var body: some View {
-//        Map(
-//            coordinateRegion: $region,
-//            interactionModes: MapInteractionModes.all,
-//            showsUserLocation: true,
-//            userTrackingMode: $tracking
-//        )
-//            .onAppear {
-//                if let userLocation = locationManager.userLocation {
-//                    region = MKCoordinateRegion(
-//                        center: userLocation.coordinate,
-//                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-//                    )
-//                }
-//            }
-//    }
-//}
-
 struct ContentView: View {
     @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
+        center: CLLocationCoordinate2D(latitude: -27.467570, longitude: 153.026215), // BNE City
         span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     )
+    @State private var bubblerAnnotations:[BubblerAnnotation] = []
+    @State private var mapView:MKMapView = MKMapView()
     
-    @State private var shouldUseHeading = true
-
     var body: some View {
-        Toggle("Switch to heading", isOn: $shouldUseHeading)
-        MapView(region: $region, useHeading: $shouldUseHeading)
+        ZStack {
+            MapView(region: $region, bubblerData: $bubblerAnnotations, mapView: $mapView)
+                .edgesIgnoringSafeArea(.all)
+                .onAppear {
+                    APICall().getBubblerData { (bubblers) in
+                        self.bubblerAnnotations = bubblers
+                    }
+                }
+            VStack {
+                HStack {
+                    Spacer()
+                    UserTrackingButton(mapView: $mapView)
+                        .frame(width: 50, height: 50)
+                        .padding(.top, 8)
+                        .padding(.trailing, 8)
+                }
+                Spacer()
+            }
+        }
     }
 }
 
