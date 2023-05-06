@@ -8,22 +8,36 @@
 import SwiftUI
 import MapKit
 
+var ERROR_MESSAGE = "Could not load bubbler locations from Brisbane City Council API. Please check your internet connection."
+
 struct ContentView: View {
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: -27.467570, longitude: 153.026215), // BNE City
-        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        span: MKCoordinateSpan(latitudeDelta: 0.00, longitudeDelta: 0.00)
     )
     @State private var bubblerAnnotations:[BubblerAnnotation] = []
     @State private var mapView:MKMapView = MKMapView()
+    
+    @State private var isErrorAlertShown = false
+    @State private var errorMessage = ""
+    func showErrorAlert(message: String) {
+        errorMessage = message
+        isErrorAlertShown = true
+    }
     
     var body: some View {
         ZStack {
             MapView(region: $region, bubblerData: $bubblerAnnotations, mapView: $mapView)
                 .edgesIgnoringSafeArea(.all)
                 .onAppear {
-                    APICall().getBubblerData { (bubblers) in
-                        self.bubblerAnnotations = bubblers
-                    }
+                    APICall().getBubblerData(
+                        success: { bubblers in
+                            self.bubblerAnnotations = bubblers
+                        },
+                        failure: { error in
+                            self.showErrorAlert(message: ERROR_MESSAGE)
+                        }
+                    )
                 }
             VStack {
                 HStack {
@@ -36,6 +50,9 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        .alert(isPresented: $isErrorAlertShown) {
+            Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+        }
     }
 }
 
@@ -43,5 +60,24 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+enum DisplayError: LocalizedError {
+    
+    case basic
+    
+    var errorDescription: String? {
+        switch self {
+        case .basic:
+            return "Title"
+        }
+    }
+    
+    var errorMessage: String? {
+        switch self {
+        case .basic:
+            return "Message"
+        }
     }
 }
