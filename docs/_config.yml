@@ -1,0 +1,19 @@
+# Site settings
+title: Brisbane Bubblers
+description: Information on the Brisbane Bubblers app
+baseurl: "" # Leave this empty for root domain or specify the subdirectory if applicable
+theme: jekyll-theme-minimal # Choose the theme you prefer
+markdown: kramdown # Use Kramdown Markdown parser
+
+# GitHub Pages specific configuration
+remote_theme: # Leave this empty if you're using the default theme specified above
+github_pages:
+  jekyll_version: 4.x # Specify the Jekyll version used by GitHub Pages
+
+# Navigation links
+nav_links:
+  - title: Privacy Policy
+    url: /privacy_policy.md
+
+# Customize the URLs of your pages
+permalink: pretty
