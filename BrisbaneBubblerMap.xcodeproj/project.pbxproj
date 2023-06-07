@@ -44,6 +44,7 @@
 		B8B1CAAD29D431C400F3F68C /* gpxgenerator_path.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = gpxgenerator_path.gpx; path = BrisbaneBubblerMap/gpxgenerator_path.gpx; sourceTree = "<group>"; };
 		B8B1CAAE29D4346F00F3F68C /* gpxgenerator_path_2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = gpxgenerator_path_2.gpx; path = BrisbaneBubblerMap/gpxgenerator_path_2.gpx; sourceTree = "<group>"; };
 		B8B1CAAF29D43BBE00F3F68C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B8D02FBA2A307CD100562FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B8D78C1629D5996900955331 /* apiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiCall.swift; sourceTree = "<group>"; };
 		B8D78C1829D5A18900955331 /* APITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITypes.swift; sourceTree = "<group>"; };
 		B8FD8AB029D1861300018CE3 /* BrisbaneBubblerMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrisbaneBubblerMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +109,7 @@
 		B8FD8AB229D1861300018CE3 /* BrisbaneBubblerMap */ = {
 			isa = PBXGroup;
 			children = (
+				B8D02FBA2A307CD100562FA3 /* Info.plist */,
 				B8FD8AB329D1861300018CE3 /* BrisbaneBubblerMapApp.swift */,
 				B8B1CAAB29D42C8800F3F68C /* LocationManager.swift */,
 				B8FD8AB529D1861300018CE3 /* ContentView.swift */,
@@ -444,6 +446,8 @@
 				DEVELOPMENT_TEAM = CPB78685HG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrisbaneBubblerMap/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this to tell where you are in relation to the water bubblers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,7 +459,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hyperfocus.systems.BrisbaneBubblerMap;
+				PRODUCT_BUNDLE_IDENTIFIER = systems.hyperfocus.brisbanebubblers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,6 +478,8 @@
 				DEVELOPMENT_TEAM = CPB78685HG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrisbaneBubblerMap/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need this to tell where you are in relation to the water bubblers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -485,7 +491,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hyperfocus.systems.BrisbaneBubblerMap;
+				PRODUCT_BUNDLE_IDENTIFIER = systems.hyperfocus.brisbanebubblers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

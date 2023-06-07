@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import MapKit
 import Combine
+import CoreLocation
+
 
 struct MapView: UIViewRepresentable {
     @Binding var region: MKCoordinateRegion
@@ -20,6 +22,9 @@ struct MapView: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> MKMapView {
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        
         mapView.delegate = context.coordinator
         mapView.showsUserLocation = true
         mapView.showsCompass = false
